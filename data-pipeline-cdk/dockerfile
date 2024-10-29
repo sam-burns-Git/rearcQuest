@@ -1,0 +1,13 @@
+FROM public.ecr.aws/lambda/python:3.8
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copy the lambda functions
+COPY . .
+
+# Use AWS Lambda RIC
+ENTRYPOINT ["python3", "-m", "awslambdaric"]
+# Default handler (can be overridden in docker run command)
+CMD ["data_scraper.lambda_handler"]
