@@ -34,7 +34,17 @@
 -> I created a function to strip whitespace form the column strings and applied this to both dataframes <br>
 -> use an inner join on both the 'Year' columns, bringing across the population column from population.json. <br>
 -> Filter this inner join by specific series id and Q01 <br>
--> Print the result
+-> Print the result <br>
+
+### Part 4: Infrastructure as Code & Data Pipeline with AWS CDK
+-> I created an aws cdk project and installed the necessary libraries <br>
+-> In 'data_pipeline_stack.py' I created an S3 bucket to store my scraped files and as SQS queue to trigger the report geenration when the new data arrives <br>
+-> I then created the Lambda functions. I took my source code from part 1, 2 and 3 and put them within handler functions. <br>
+-> I then created a requirements.txt file so that my pipeline could download the necessary dependencies to run correctly. <br>
+-> I deployed the cdk stack and ran tests on it. <br>
+-> I ran into errors at this point of the quest and could not resolve them. <br>
+-> It was to do with my environment not being set up correctly and I then started to run a docker container so the necessary packages could be downloaded. <br>
+-> I unfortunately was unable to resolve these errors and my pipeline did not scrape the files correctly, therefore not kicking off the report generation either.
 
 
 
