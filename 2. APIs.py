@@ -7,8 +7,8 @@ from io import BytesIO
 # Define the API URL
 API_url = "https://datausa.io/api/data?drilldowns=Nation&measures=Population"
 
-s3_client = boto3.client('s3', aws_access_key_id='AKIAUW4RBBFE5L3N4TNZ',
-                         aws_secret_access_key='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',
+s3_client = boto3.client('s3', aws_access_key_id='***',
+                         aws_secret_access_key='***',
                          region_name='eu-north-1') #client to access my S3 bucket
 BUCKET_NAME = 'rearc-quest-sam'
 FILE_NAME = 'population_data.json'
